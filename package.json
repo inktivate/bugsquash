@@ -1,14 +1,22 @@
 {
   "name": "bugsquash",
   "version": "1.0.0",
-  "description": "",
+  "description": "These are the starter files for the Bug Squash game.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Ethan Sternke",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inktivate/bugsquash.git"
+  },
+  "bugs": {
+    "url": "https://github.com/inktivate/bugsquash/issues"
+  },
+  "homepage": "https://github.com/inktivate/bugsquash#readme"
 }

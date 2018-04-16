@@ -5,10 +5,28 @@ let scoreSpan = document.getElementById("scoreSpan")
 let countdown = 10, score = 0;
 let startTime;
 
+const scoresURL = "http://localhost:3000/scores";
+
 function gameOver() {
-    // This is the function that gets called when the game is over.
-    // Update this to post the new score to the server.
     window.alert("You squashed " + score + " bugs!");
+    const newData = {
+        name: playerName,
+        score: score
+    }
+    const postRequestOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newData)
+    }
+    fetch(scoresURL, postRequestOptions)
+        .then(scores => {
+            console.log(scores);
+        })
+        .catch(error => {
+            console.log("A network error has occurred when attempting to perform the POST request:", error)
+        })
 }
 
 function playGame() {
